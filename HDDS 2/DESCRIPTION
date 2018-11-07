@@ -1,0 +1,13 @@
+Package: HDDS
+Type: Package
+Title: Hamming Distance for BS3033
+Version: 0.1.0
+Author: Group 5 2018
+Maintainer: Sung Yang <ho0014ng@e.ntu.edu.sg>
+Description: This package is meant for the class to play-test and as an interactive presentation.
+License: No idea
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+NeedsCompilation: no
+Packaged: 2018-11-07 10:23:02 UTC; SungYang

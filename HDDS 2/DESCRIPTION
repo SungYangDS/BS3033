@@ -1,13 +1,14 @@
-Package: HDDS
+Package: DNAGen
 Type: Package
-Title: Hamming Distance for BS3033
+Title: DNA Generator
 Version: 0.1.0
-Author: Group 5 2018
-Maintainer: Sung Yang <ho0014ng@e.ntu.edu.sg>
-Description: This package is meant for the class to play-test and as an interactive presentation.
-License: No idea
+Author: BS3033
+Maintainer: Group5 <ho0014ng@e.ntu.edu.sg>
+Description: DNA generation of positive and negative control, randomized. 
+License: GPL-2?
 Encoding: UTF-8
 LazyData: true
+Imports: stringi
 RoxygenNote: 6.1.0
 NeedsCompilation: no
-Packaged: 2018-11-07 10:23:02 UTC; SungYang
+Packaged: 2018-11-09 10:45:36 UTC; SungYang

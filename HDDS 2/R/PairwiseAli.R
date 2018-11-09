@@ -1,12 +1,12 @@
 #' @title Pairwise Alignment
 #'
-#' @description Pairwise alignment function
+#' @description A pairwise alignment function
 #'
-#' @param str1,str2,m,s,g
+#' @param str1,str2, m,s,g
 #'
-#' @return numbr_of_sim
+#' @return scores
 #'
-#' @examples gen_matrix(str1,str2,m=2,s=2,g=3)
+#' @examples gen_matrix(str1,str2,m=2,s=2,g=2)
 #'
 #' @export gen_matrix
 
@@ -34,13 +34,6 @@ gen_matrix= function(str1, str2, m, s, g){
       MX[j,i]= max(outcomes)
     }
   }
-  return(MX)
-}
-
-
-traceback= function (matrx, str1, str2){
-  sq1= unlist(strsplit(str1, split= ""))
-  sq2= unlist(strsplit(str2, split= ""))
 
   alignment_1= c()
   alignment_2= c()
@@ -49,10 +42,10 @@ traceback= function (matrx, str1, str2){
   j= length(sq2)+1
 
   while (i > 1 && j > 1) {
-    currentscore= matrx[j, i]
-    diagonalscore= matrx[(j-1), (i-1)]
-    abovescore= matrx[(j-1), i]
-    leftscore= matrx[j, (i-1)]
+    currentscore= MX[j, i]
+    diagonalscore= MX[(j-1), (i-1)]
+    abovescore= MX[(j-1), i]
+    leftscore= MX[j, (i-1)]
     outcomes= c(diagonalscore, abovescore, leftscore)
 
     if (outcomes[1] == max(outcomes)){
@@ -74,22 +67,13 @@ traceback= function (matrx, str1, str2){
       i= i-1
     }
   }
+
   a1= paste(rev(alignment_1), collapse = "")
   a2= paste(rev(alignment_2), collapse = "")
-  return (rbind(a1, a2))
-}
 
-sim_score= function(str1, str2){
-  s1= unlist(strsplit(str1, split= ""))
-  s2= unlist(strsplit(str2, split= ""))
-  if(length(s1)== length(s2)){
-    matching= s1==s2
+  if (length(alignment_1)== length(alignment_2)){
+    matching= alignment_1==alignment_2
     numbr_of_sim= sum(matching== TRUE)
   }
-  return (numbr_of_sim)
+  print (numbr_of_sim)
 }
-
-mtx = gen_matrix(str1,str2, m= 1, s= -1, g= -1)
-alignments= traceback (mtx, p, q)
-scores= sim_score(alignments[1], alignments[2])
-print (scores)

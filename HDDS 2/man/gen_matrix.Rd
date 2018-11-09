@@ -7,15 +7,15 @@
 gen_matrix(str1, str2, m, s, g)
 }
 \arguments{
-\item{str1, str2, m, s, g}{}
+\item{str1, str2, }{m,s,g}
 }
 \value{
-numbr_of_sim
+scores
 }
 \description{
-Pairwise alignment function
+A pairwise alignment function
 }
 \examples{
-gen_matrix(str1,str2,m=2,s=2,g=3)
+gen_matrix(str1,str2,m=2,s=2,g=2)
 
 }

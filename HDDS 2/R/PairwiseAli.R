@@ -88,3 +88,8 @@ sim_score= function(str1, str2){
   }
   return (numbr_of_sim)
 }
+
+mtx = gen_matrix(str1,str2, m= 1, s= -1, g= -1)
+alignments= traceback (mtx, p, q)
+scores= sim_score(alignments[1], alignments[2])
+print (scores)

@@ -1,12 +1,12 @@
-#' @title HDDS
+#' @title Hamming Distance
 #'
-#' @description This package is meant for play-test and interactive presentation.
+#' @description Hamming Distance modified to for biology for aligning biological sequences. However, this is still a prototype.
 #'
 #' @param s1,s2,gapO,gapE
 #'
-#' @return Total_score
+#' @return total_score
 #'
-#' @examples hamming_distance(s1,s2,gapO,gapE)
+#' @examples hamming_distance(s1,s2,2,2)
 #'
 #' @export
 
@@ -18,12 +18,11 @@ hamming_distance<- function(s1,s2,gapO,gapE){
 
   if (length(s1) == length(s2)){
     matching= s1==s2
-    gap=sum(matching== FALSE)
     matchg= s1==s2
     sim= sum(matchg== TRUE)
     gap= sum(matchg== FALSE)
     matchg= paste(as.numeric(matchg), collapse= "")
-    if (regexpr("10", matchg)){
+    if (grepl("10", matchg)){
       bin= bin + 1
     }
     Total_score= Total_score + sim - bin*gapO - (gap-bin)*gapE
@@ -36,7 +35,7 @@ hamming_distance<- function(s1,s2,gapO,gapE){
     sim= sum(matchg== TRUE)
     gap= sum(matchg== FALSE)
     matchg= paste(as.numeric(matchg), collapse= "")
-    if (regexpr("10", matchg)){
+    if (grepl("10", matchg)){
       bin= bin + 1
     }
     Total_score= Total_score + sim - bin*gapO - (gap-bin)*gapE

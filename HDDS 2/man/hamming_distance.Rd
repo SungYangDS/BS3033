@@ -2,7 +2,7 @@
 % Please edit documentation in R/hello.R
 \name{hamming_distance}
 \alias{hamming_distance}
-\title{HDDS}
+\title{Hamming Distance}
 \usage{
 hamming_distance(s1, s2, gapO, gapE)
 }
@@ -10,12 +10,12 @@ hamming_distance(s1, s2, gapO, gapE)
 \item{s1, s2, gapO, gapE}{}
 }
 \value{
-Total_score
+total_score
 }
 \description{
-This package is meant for play-test and interactive presentation.
+Hamming Distance modified to for biology for aligning biological sequences. However, this is still a prototype.
 }
 \examples{
-hamming_distance(s1,s2,gapO,gapE)
+hamming_distance(s1,s2,2,2)
 
 }

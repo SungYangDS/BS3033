@@ -1,13 +1,12 @@
-Package: PairwiseAli
+Package: HDDS
 Type: Package
-Title: Pairwise Alignment
+Title: Hamming Distance
 Version: 0.1.0
-Author: BS3033
+Author: BS3033 
 Maintainer: Group 5 <ho0014ng@e.ntu.edu.sg>
-Description: This is just a pairwise alignment function
-License: No idea
+Description: A hamming distance meant to be modified to be comparable with current alignemtn purposes.
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0
 NeedsCompilation: no
-Packaged: 2018-11-09 12:16:30 UTC; SungYang
+Packaged: 2018-11-11 06:33:56 UTC; SungYang

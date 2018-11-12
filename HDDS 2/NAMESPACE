@@ -1,1 +1,1 @@
-export(DNA)
+export (gen_matrix)
